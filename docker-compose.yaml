@@ -4,9 +4,9 @@ services:
     image: neo4j:latest
     environment:
       - NEO4J_AUTH=none
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.\\\*
     volumes:
       - '$PWD/data/:/data'
-      - '$PWD/conf/:/var/lib/neo4j/conf'
       - '$PWD/plugins:/plugins'
     ports:
       - '7474:7474'

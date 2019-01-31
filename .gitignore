@@ -1,0 +1,11 @@
+.cache/
+.wget-hsts
+data/
+import/
+kaggle/
+plugins/
+notebooks/.cache/
+notebooks/.ipynb_checkpoints/
+notebooks/.ipython/
+notebooks/.jupyter/
+notebooks/.local/

@@ -1,0 +1,34 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}NYT Recommender{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header navbar-brand">NYT Recommender</div>
+    </ul>
+  </div>
+</nav>
+{% endblock%}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{ rarticle.headline }}</h1>
+    <h5>{{ rarticle.byline }}</h5>
+    News Desk: <i>{{ rarticle.newDesk }}</i><br>
+    <a class="btn btn-default" href={{ rarticle.webURL }}>Read</a>
+  </div>
+</div>
+<div class="container">
+  <h2><i>Recommendations</i></h2>
+</div>
+{% for rec in recommendations %}
+  <div class="container">
+    <div class="well">
+      <h3>{{ rec.headline }}</h3>
+      <h5>{{ rec.byline }}</h5>
+      News Desk: <i>{{ rec.newDesk }}</i><br>
+      <a class="btn btn-default" href={{ rec.webURL }}>Read</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock%}

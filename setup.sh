@@ -1,4 +1,6 @@
 #!/bin/bash
+docker pull neo4j
+docker pull python
 if [[ -e $PWD/import/users.csv && -e $PWD/import/articles.csv && -e $PWD/import/comments.csv ]]; then
     echo "Import files already exist.";
 else

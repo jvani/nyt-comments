@@ -13,5 +13,6 @@ if __name__ == '__main__':
     print('Calculating connected components; see neo4j logs for progress...')
     op = ('CALL algo.unionFind(null, null, {write:true, partitionProperty:"connComponent"}) '
     'YIELD nodes, setCount, loadMillis, computeMillis, writeMillis;')
+    graph.run(op)
     print('Completed calculating connected components.')
 

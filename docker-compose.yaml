@@ -14,8 +14,17 @@ services:
   jupyter:
     image: jupyter/scipy-notebook
     volumes:
-     - './notebooks:/home/jovyan'
+      - '$PWD/notebooks:/home/jovyan'
     ports:
-     - '8888:8888'
+      - '8888:8888'
     links:
-     - neo4j:neo4j
+      - neo4j:neo4j
+  recommender:
+    image: python
+    volumes:
+      - '$PWD/recommender:/app'
+    ports:
+      - '5000:5000'
+    links:
+      - neo4j:neo4j
+    command: bash -c 'pip install py2neo pandas Flask flask-bootstrap && python /app/app.py'

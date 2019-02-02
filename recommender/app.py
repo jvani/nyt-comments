@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
-graph = py2neo.Graph('http://localhost:7474')
+graph = py2neo.Graph('http://neo4j:7474')
 
 
 def yield_record(cursor):
@@ -56,5 +56,5 @@ def home():
     return render_template('home.html', rarticle=rarticle, recommendations=recs.head().to_dict(orient='rows'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
 

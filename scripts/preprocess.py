@@ -49,7 +49,7 @@ class Preprocessor:
     @staticmethod
     def load_from_comments(fpath):
         """"""
-        logging.info('Creating graph: {}'.format(fpath))
+        logging.info('Creating graph from: {}'.format(fpath))
         # -- Load comment data.
         columns = ['userID', 'userDisplayName', 'userLocation', 'articleID']
         df = pd.read_csv(fpath, dtype=str, usecols=columns)

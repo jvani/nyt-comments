@@ -43,6 +43,7 @@ def connected_articles(graph, articleID):
     RETURN m""".format(articleID)
     cur = graph.run(op)
     df = pd.DataFrame([rr['m'] for rr in yield_record(cur)])
+    df = df[df.headline != 'Unknown']
     comments = pd.DataFrame(df.groupby('articleID').size().rename('Comments'))
     recs = df.merge(comments, left_on='articleID', right_on='articleID') \
             .drop_duplicates() \

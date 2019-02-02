@@ -3,10 +3,11 @@ This project creates a graph of New York Times Articles (node), Users (node), an
 
 > The data contains information about the comments made on the articles published in New York Times in Jan-May 2017 and Jan-April 2018. The month-wise data is given in two csv files - one each for the articles on which comments were made and for the comments themselves. The csv files for comments contain over 2 million comments in total with 34 features and those for articles contain 16 features about more than 9,000 articles.
 
+Running this project will start 2 services:
 <table border="0">
   <tr>
-    <th>Neo4J Graph</th>
-    <th>Toy Recommender</th>
+    <th>Neo4J Graph @ <a href=http://localhost:7474>http://localhost:7474<a></th>
+    <th>Toy Recommender @ <a href=http://localhost:5000>http://localhost:5000<a></th>
   </tr>
   <tr>
     <td><img alt="Neo4J Graph" src="https://github.com/jvani/nyt-comments/blob/master/docs/graphex.png"></img></td>
